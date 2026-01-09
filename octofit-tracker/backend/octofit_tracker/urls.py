@@ -25,6 +25,10 @@ if codespace_name:
 else:
     base_url = "http://localhost:8000"
 
+# Optionally, you can expose base_url for use in views or documentation
+from django.conf import settings
+settings.BASE_API_URL = base_url
+
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'teams', TeamViewSet)
